@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       title: 'Weido-Easy Recording System',
       theme: ThemeData(
 
-        primarySwatch: Colors.lightGreen,
+        primarySwatch: Colors.greenaccent,
       ),
       home: LoginPage(title: 'Weido | Easy Recording System'),
     );
