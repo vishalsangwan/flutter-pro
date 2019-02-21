@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:weido/pages/RecordingPage.dart';
 
 class LoginPage extends StatefulWidget {
-  LoginPage({Key key, this.title}) : super(key: key);
+  LoginPage({this.cameras, this.title});
+  var cameras;
+
 
   final String title;
 
@@ -46,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
             RaisedButton(
               onPressed: (){
                 Navigator.push(context,
-                    MaterialPageRoute(builder:(context)=>RecordingPage()),
+                    MaterialPageRoute(builder:(context)=>RecordingPage(widget.cameras)),
                 );
               },
 

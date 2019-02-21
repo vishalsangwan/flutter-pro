@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:weido/pages/LoginPage.dart';
+import 'package:camera/camera.dart';
 
-void main() => runApp(MyApp());
+List<CameraDescription> cameras;
+
+Future<Null> main() async{
+  cameras = await availableCameras();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -13,7 +19,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.lightGreen,
       ),
-      home: LoginPage(title: 'Weido | Easy Recording System'),
+      home: LoginPage(title: 'Weido | Easy Recording System',cameras: cameras),
     );
   }
 }
